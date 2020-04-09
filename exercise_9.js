@@ -1,12 +1,23 @@
 function checkAB(num) {
+    let posisiA = [];
+    let posisiB = [];   
     for (let i = 0; i < num.length; i++) {
-        if (num[i] === 'a' || num[i] === 'b') {
-            if (num[i + 4] === 'a' || num[i + 4] === 'b') {
-                return true
-            }
+        if (num[i] === 'a') {
+            posisiA.push(i);
+        } else if (num[i] === 'b') {
+            posisiB.push(i);
         }
     }
-    return false
+
+    let flag = false;
+    for (let i = 0; i < posisiA.length; i++) {
+        for (let j = 0; j < posisiB.length; j++) {
+            if (Math.abs(posisiB[j] - posisiA[i]) === 4) {
+                flag = true;
+        }
+      }
+    }
+  return flag;
 }
 
 // TEST CASES
