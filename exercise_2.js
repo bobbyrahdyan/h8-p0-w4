@@ -1,10 +1,37 @@
 function fpb(angka1, angka2) {
+    let temp1 = [];
+    let temp2 = [];
+    let result = [];
+    let finalResult = [];
+
     for (let i = 0; i < angka1; i++) {
-        if (angka1 % i === 0 && angka2 % i === 0) {
-            result = i
+        if (angka1 % i === 0) {
+            temp1.push(i)
         }
     }
-    return result
+
+    for (let i = 0; i < angka2; i++) {
+        if (angka2 % i === 0) {
+            temp2.push(i)
+        }
+    }
+
+    for (let i = 0; i < temp1.length; i++) {
+        for (let j = 0; j < temp2.length; j++) {
+            if (temp1[i] === temp2[j]) {
+                result.push(temp1[i])
+            }
+        }
+    }
+
+    for (let i = 0; i < result.length; i++) {
+        if (temp1[i] > temp2[i]) {
+            finalResult = result[i]
+        } else {
+            finalResult = result[i]
+        }
+    }
+    return finalResult
 }
 
 // TEST CASES
