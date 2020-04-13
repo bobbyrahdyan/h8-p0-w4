@@ -1,10 +1,17 @@
 function ubahHuruf(kata) {
     let abjad = 'abcdefghijklmnopqrstuvwxyz';
-    let urutan = 0;
     let str = '';
+     
     for (let i = 0; i < kata.length; i++) {
-        urutan = abjad.indexOf(kata[i])
-        str += abjad[urutan + 1]
+      for (let j = 0; j < abjad.length; j++) {
+            if (kata[i] === abjad[j]) {
+                if (kata[i] === 'z') {
+                    str += 'a'
+                } else {
+                    str += abjad[j + 1]
+                }
+            }
+        }
     }
     return str
 }
